@@ -35,11 +35,11 @@ function game() {
 function displayGameOver() {
   if (isGameOver) {
     let text = didWin ? "GG" : "Game Over";
-    let textOffset = didWin ? 3.5 : 5;
 
     ctx.fillStyle = "white";
-    ctx.font = "70px space invaders";
-    ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
+    ctx.textAlign = "center";
+    ctx.font = "50px space invaders";
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
   }
 }
 
