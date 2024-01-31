@@ -38,7 +38,7 @@ function displayGameOver() {
 
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
-    ctx.font = "50px space invaders";
+    ctx.font = "50px Space";
     ctx.fillText(text, canvas.width / 2, canvas.height / 2);
   }
 }

@@ -14,13 +14,20 @@
   <title>Issued Invaders</title>
   <link rel="shortcut icon" href="#" />
   <style>
+    @font-face {
+      font-family: 'Space';
+      src: url('./font/space_invaders.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      unicode-range: U+000-5FF;
+    }
+
+
     h1 {
       margin: 0px;
-      margin-top: 100px;
+      margin-top: 50px;
       margin-bottom: 50px;
       font-size: 2rem;
-      font-family: "space invaders";
-      src: url('./font/space_invaders.ttf') format('truetype');
       color: white;
     }
 
@@ -31,8 +38,71 @@
       padding: 0px;
       margin: 0px;
       height: 100vh;
+      font-family: 'Space', sans-serif;
       background-image: url(./images/spacebg.png);
+      object-fit: cover;
       z-index: -1;
+    }
+
+    .legend {
+      position: fixed;
+      right: 15%;
+      bottom: 33%;
+      background-image: url(./images/24.jpg);
+      color: white;
+      border-radius: 30px;
+      width: 100%;
+      max-width: 250px;
+      height: 100%;
+      max-height: 350px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid white;
+    }
+
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 2rem;
+      display: flex;
+      align-items: center;
+      /* Adjust the margin as needed */
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      padding-left: 10px;
+    }
+
+    button {
+      margin-top: 2.5rem;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid white;
+    }
+
+    canvas {
+      border: 1px solid white;
+    }
+
+    h3 {
+      margin-top: -1rem;
+      margin-bottom: -1rem;
     }
   </style>
 </head>
@@ -40,7 +110,37 @@
 <body>
   <h1>Issued Invaders</h1>
   <canvas id="game"></canvas>
+  <div class="legend">
+    <h3>Buttons</h3>
+    <ul>
+      <li>
+        <span>Fire:</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)">
+          <path d="M4 9V13H20V9H22V14C22 14.5523 21.5523 15 21 15H3C2.44772 15 2 14.5523 2 14V9H4Z"></path>
+        </svg>
+        SPACE
+      </li>
+
+      <li>
+        <span>Movement: ARROWS </span>
+      </li>
+    </ul>
+    <h3>Replay</h3>
+    <button onclick="refreshPage()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)">
+        <path
+          d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z">
+        </path>
+      </svg></button>
+
+  </div>
   <script type="module" src="index.js"></script>
+  <script>
+    function refreshPage() {
+      location.reload(true);
+    }
+  </script>
+
 </body>
 
 </html>
