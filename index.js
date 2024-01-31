@@ -51,11 +51,11 @@ function checkGameOver() {
   if (enemyBulletController.collideWith(player)) {
     isGameOver = true;
   }
-
+  //game over
   if (enemyController.collideWith(player)) {
     isGameOver = true;
   }
-
+  //gg
   if (enemyController.enemyRows.length === 0) {
     didWin = true;
     isGameOver = true;
